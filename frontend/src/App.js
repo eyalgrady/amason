@@ -39,6 +39,10 @@ function App() {
   };
 
   useEffect(() => {
+    document.title = "Amason - Sell less, Smile for";
+  }, []);
+
+  useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       const user = jwtDecode(token);
