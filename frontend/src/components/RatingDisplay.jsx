@@ -3,7 +3,7 @@ import { Close, Star } from "@mui/icons-material";
 import { Typography, Box, IconButton } from "@mui/material";
 import RatingProg from "./RatingProg";
 
-const RatingDisplay = ({ product }) => {
+const RatingDisplay = ({ product, fetchProduct }) => {
   const [isRatingProgVisible, setIsRatingProgVisible] = useState(false);
   const [ratingAvg, setRatingAvg] = useState(0);
   const [totalRatings, setTotalRatings] = useState(0);
@@ -88,7 +88,7 @@ const RatingDisplay = ({ product }) => {
           >
             <Close />
           </IconButton>
-          <RatingProg product={product} />
+          <RatingProg product={product} fetchProduct={fetchProduct} />
         </Box>
       )}
     </Box>

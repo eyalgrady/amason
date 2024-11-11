@@ -30,7 +30,7 @@ export const initialData = {
         country: "Israel",
       },
       image: {
-        url: "https://via.placeholder.com/150",
+        url: "https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/fde98af2-b860-4778-9dad-a27fb1adae1d._CR0%2C0%2C3000%2C600_SX1500_.jpg",
         alt: "Business One Image",
       },
       isBusiness: true,
@@ -58,7 +58,7 @@ export const initialData = {
         country: "Israel",
       },
       image: {
-        url: "https://via.placeholder.com/150",
+        url: "https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/1/AmazonStores/ATVPDKIKX0DER/872b1aaa3a7fc50de2fccba333f0c082.w3000.h601._CR0%2C0%2C3000%2C601_SX1920_.jpg",
         alt: "Business Two Image",
       },
       isBusiness: true,
@@ -84,7 +84,7 @@ export const initialData = {
         country: "Israel",
       },
       image: {
-        url: "https://via.placeholder.com/150",
+        url: "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/7ace7f48-503b-43c3-8227-8f2ae50bacb3._SL5000_CR0%2C0%2C5000%2C1000_SX1920_.jpg",
         alt: "Business Three Image",
       },
       isBusiness: true,

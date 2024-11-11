@@ -3,7 +3,7 @@ import { Star } from "@mui/icons-material";
 import { Button, Typography, Box } from "@mui/material";
 import RatingProduct from "./RatingProduct";
 
-export default function RatingProg({ product }) {
+export default function RatingProg({ product, fetchProduct }) {
   const [ratingData, setRatingData] = useState([]);
   const [totalRatings, setTotalRatings] = useState(0);
   const [showRatingForm, setShowRatingForm] = useState(false);
@@ -98,7 +98,11 @@ export default function RatingProg({ product }) {
           </Button>
         </>
       ) : (
-        <RatingProduct productId={product._id} onClose={handleRatingForm} />
+        <RatingProduct
+          productId={product._id}
+          onClose={handleRatingForm}
+          fetchProduct={fetchProduct}
+        />
       )}
     </Box>
   );

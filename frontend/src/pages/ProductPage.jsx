@@ -11,23 +11,24 @@ export default function ProductPage() {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
 
-  useEffect(() => {
-    const fetchCard = async () => {
-      try {
-        const productData = await fetch(
-          `http://localhost:8060/products/${productId}`
-        );
-        if (!productData.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await productData.json();
-        setProduct(data);
-      } catch (error) {
-        alert(`Error fetching product: ${error.message}`);
+  // פונקציה לעדכון המידע של המוצר
+  const fetchProduct = async () => {
+    try {
+      const productData = await fetch(
+        `http://localhost:8060/products/${productId}`
+      );
+      if (!productData.ok) {
+        throw new Error("Network response was not ok");
       }
-    };
+      const data = await productData.json();
+      setProduct(data);
+    } catch (error) {
+      alert(`Error fetching product: ${error.message}`);
+    }
+  };
 
-    fetchCard();
+  useEffect(() => {
+    fetchProduct();
   }, [productId]);
 
   const renderTags = (tags, keyPrefix = "tag") => (
@@ -112,7 +113,7 @@ export default function ProductPage() {
               </Typography>
             </Link>
 
-            <RatingDisplay product={product} />
+            <RatingDisplay product={product} fetchProduct={fetchProduct} />
 
             <Divider
               sx={{

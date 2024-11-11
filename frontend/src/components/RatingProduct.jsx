@@ -3,7 +3,7 @@ import { TextField, Button, Box, Typography, IconButton } from "@mui/material";
 import { Star, StarBorder } from "@mui/icons-material";
 import { GeneralContext } from "../data/VariablesDefinitions";
 
-const RatingProduct = ({ productId, onClose }) => {
+const RatingProduct = ({ productId, fetchProduct, onClose }) => {
   const [userRating, setUserRating] = useState(1);
   const [hoverRating, setHoverRating] = useState(0);
   const [comment, setComment] = useState("");
@@ -54,7 +54,7 @@ const RatingProduct = ({ productId, onClose }) => {
           // יצירת אובייקט דירוג חדש או עדכון דירוג קיים
           const newRating = {
             userId: user._id,
-            user_name: user.name, // תוכל לשנות את שם המשתמש אם יש לך את המידע
+            user_name: user.name,
             rating: userRating,
             comment: comment,
           };
@@ -85,6 +85,7 @@ const RatingProduct = ({ productId, onClose }) => {
         }
         return prevProducts; // אם לא מצאנו את המוצר, מחזירים את המערך כמו שהוא
       });
+      await fetchProduct(); // פונקציה שתמשוך את המוצר מחדש משרת
       snackbar(
         hasRated
           ? "Rating updated successfully!"
