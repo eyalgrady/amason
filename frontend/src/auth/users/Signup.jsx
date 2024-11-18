@@ -9,8 +9,8 @@ import {
   TextField,
   Typography,
   Paper,
-  Snackbar,
-  Alert,
+  // Snackbar,
+  // Alert,
   Divider,
 } from "@mui/material";
 import { GeneralContext } from "../../data/VariablesDefinitions";
@@ -300,13 +300,13 @@ export default function Signup() {
         </form>
       </Paper>
       {/* Snackbar for feedback */}
-      <Snackbar
+      {/* <Snackbar
         open={!!error}
         autoHideDuration={6000}
         onClose={() => setError("")}
       >
         <Alert severity="error">{error}</Alert>
-      </Snackbar>
+      </Snackbar> */}
     </Box>
   );
 }
